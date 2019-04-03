@@ -22,16 +22,31 @@
 */
 window.addEventListener("load", setStyles);
 
-var styleNum = randInt(5);
 
-var fancySheet = document.createElement("link")
-fancySheet.setAttribute("rel", "stylesheet");
-fancySheet.setAttribute("id", "fancySheet");
-fancySheet.setAttribute("href", "na_style_num.css");
+
+function setStyles() {
+      var styleNum = randInt(5);
+      var fancySheet = document.createElement("link");
+      fancySheet.setAttribute("rel", "stylesheet");
+      fancySheet.setAttribute("id", "fancySheet");
+      fancySheet.setAttribute("href", "na_style_" + styleNum + ".css");
+
+      document.head.appendChild(fancySheet);
+}
+
 
 var figBox = document.createElement("figure");
-figBox.setAttribute("id", "styleThumbs")
-figBox.appendChild()
+figBox.setAttribute("id", "styleThumbs");
+figBox.setAttribute("name", "figBox");
+document.getElementById("box").appendChild(figBox);
+
+for (var i = 0; i <= 4; i++) {
+      document.createElement("img").setAttribute("src", "na_style_" + sheetImg + ".css")
+
+}
+
+
+
 
 function randInt(size) {
       return Math.floor(size * Math.random());
