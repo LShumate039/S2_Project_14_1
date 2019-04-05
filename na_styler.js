@@ -41,10 +41,39 @@ figBox.setAttribute("name", "figBox");
 document.getElementById("box").appendChild(figBox);
 
 for (var i = 0; i <= 4; i++) {
-      document.createElement("img").setAttribute("src", "na_style_" + sheetImg + ".css")
+      var sheetIMG = document.createElement("img");
+      sheetIMG.setAttribute("src", "na_small_" + i + ".png");
+      sheetIMG.setAttribute("alt", "na_style_" + i + ".css");
 
+      sheetIMG.onclick = function (e) {
+            fancySheet.setAttribute("href", e.target.alt);
+      }
+      figBox.appendChild(sheetIMG);
 }
+var thumbStyles = document.createElement("style");
+document.head.appendChild(thumbStyles);
 
+document.styleSheets[document.styleSheets.length - 1].insertRule(
+      "figure#styleThumbs { \
+      position: absolute;\
+      left: 0px;\
+      bottom: 0px;\
+}"
+)
+document.styleSheets[document.styleSheets.length - 1].insertRule(
+
+      "figure#styleThumbs img { \
+       outline: 1px solid black;\
+       cursor: pointer;\
+       opacity: 0.75;\
+           }"
+)
+document.styleSheets[document.styleSheets.length - 1].insertRule(
+      "figure#styleThumbs img:hover { \
+            outline: 1px solid red; \
+            opacity: 1.0;\
+       } "
+)
 
 
 
