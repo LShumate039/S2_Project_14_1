@@ -23,7 +23,8 @@
 window.addEventListener("load", setStyles);
 
 
-
+// fancySheet was the name i chose for the var value
+//randInt is the 5 pictures it turns to when reloading the website 
 function setStyles() {
       var styleNum = randInt(5);
       var fancySheet = document.createElement("link");
@@ -39,7 +40,7 @@ var figBox = document.createElement("figure");
 figBox.setAttribute("id", "styleThumbs");
 figBox.setAttribute("name", "figBox");
 document.getElementById("box").appendChild(figBox);
-
+//this is looping through all the pictures 
 for (var i = 0; i <= 4; i++) {
       var sheetIMG = document.createElement("img");
       sheetIMG.setAttribute("src", "na_small_" + i + ".png");
@@ -52,7 +53,7 @@ for (var i = 0; i <= 4; i++) {
 }
 var thumbStyles = document.createElement("style");
 document.head.appendChild(thumbStyles);
-
+//this moves all the elements to the bottom of the page and gives the red lines to the pictures 
 document.styleSheets[document.styleSheets.length - 1].insertRule(
       "figure#styleThumbs { \
       position: absolute;\
